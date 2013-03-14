@@ -2149,84 +2149,82 @@ Source: www.kingbright.com</description>
 </class>
 </classes>
 <parts>
-<part name="IC1" library="ic-package" deviceset="DIL8" device="S"/>
-<part name="R1" library="SparkFun" deviceset="RESISTOR" device="2010"/>
+<part name="ATTINY85" library="ic-package" deviceset="DIL8" device="S"/>
+<part name="1K_RESISTOR_2010" library="SparkFun" deviceset="RESISTOR" device="2010"/>
 <part name="+5V" library="solpad" deviceset="SE14" device=""/>
 <part name="GND" library="solpad" deviceset="SE14" device=""/>
-<part name="S1" library="switch-omron" deviceset="10-XX" device=""/>
-<part name="LED1" library="led" deviceset="LED" device="CHIPLED_0805"/>
+<part name="OMRON_SWITCH" library="switch-omron" deviceset="10-XX" device=""/>
+<part name="LED_0805" library="led" deviceset="LED" device="CHIPLED_0805"/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="22.86" y="33.02" size="1.778" layer="91">DIL8 SOCKET</text>
-<text x="68.58" y="12.7" size="1.778" layer="91">SMD RESISTOR (SIZE: 2010)</text>
-<text x="0" y="30.48" size="1.778" layer="91">LED (SIZE: 0805)</text>
-<text x="48.26" y="33.02" size="1.778" layer="91">OMRON MOMENTARY SWITCH</text>
-<text x="25.4" y="2.54" size="1.778" layer="91">DON'T FORGET TO NAME THE GROUND SUPPLY!</text>
 </plain>
 <instances>
-<instance part="IC1" gate="G$1" x="30.48" y="25.4"/>
-<instance part="R1" gate="G$1" x="58.42" y="12.7"/>
-<instance part="+5V" gate="1" x="43.18" y="45.72"/>
+<instance part="ATTINY85" gate="G$1" x="30.48" y="25.4"/>
+<instance part="1K_RESISTOR_2010" gate="G$1" x="63.5" y="12.7"/>
+<instance part="+5V" gate="1" x="43.18" y="43.18"/>
 <instance part="GND" gate="1" x="17.78" y="5.08" rot="R180"/>
-<instance part="S1" gate="1" x="76.2" y="22.86" rot="R270"/>
-<instance part="LED1" gate="G$1" x="10.16" y="25.4" rot="R270"/>
+<instance part="OMRON_SWITCH" gate="1" x="78.74" y="25.4" rot="R270"/>
+<instance part="LED_0805" gate="G$1" x="48.26" y="17.78" rot="R90"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="5V" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="8"/>
+<pinref part="ATTINY85" gate="G$1" pin="8"/>
 <pinref part="+5V" gate="1" pin="MP"/>
 <wire x1="38.1" y1="27.94" x2="43.18" y2="27.94" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="27.94" x2="43.18" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="38.1" x2="43.18" y2="43.18" width="0.1524" layer="91"/>
-<wire x1="43.18" y1="38.1" x2="86.36" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="86.36" y1="38.1" x2="86.36" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="S1"/>
-<wire x1="86.36" y1="20.32" x2="81.28" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="S"/>
-<wire x1="81.28" y1="20.32" x2="81.28" y2="22.86" width="0.1524" layer="91"/>
-<junction x="43.18" y="38.1"/>
+<wire x1="43.18" y1="27.94" x2="43.18" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="35.56" x2="43.18" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="43.18" y1="35.56" x2="99.06" y2="35.56" width="0.1524" layer="91"/>
+<wire x1="99.06" y1="35.56" x2="99.06" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="OMRON_SWITCH" gate="1" pin="S1"/>
+<wire x1="99.06" y1="22.86" x2="83.82" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="OMRON_SWITCH" gate="1" pin="S"/>
+<wire x1="83.82" y1="22.86" x2="83.82" y2="25.4" width="0.1524" layer="91"/>
+<junction x="43.18" y="35.56"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="IC1" gate="G$1" pin="4"/>
+<pinref part="ATTINY85" gate="G$1" pin="4"/>
 <pinref part="GND" gate="1" pin="MP"/>
 <wire x1="22.86" y1="20.32" x2="17.78" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="20.32" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
-<pinref part="LED1" gate="G$1" pin="C"/>
 <wire x1="17.78" y1="12.7" x2="17.78" y2="7.62" width="0.1524" layer="91"/>
-<wire x1="5.08" y1="25.4" x2="2.54" y2="25.4" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="25.4" x2="2.54" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="2.54" y1="12.7" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
 <junction x="17.78" y="12.7"/>
-<pinref part="R1" gate="G$1" pin="1"/>
-<wire x1="53.34" y1="12.7" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$3" class="0">
-<segment>
-<pinref part="IC1" gate="G$1" pin="2"/>
-<pinref part="LED1" gate="G$1" pin="A"/>
-<wire x1="22.86" y1="25.4" x2="12.7" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="1K_RESISTOR_2010" gate="G$1" pin="1"/>
+<wire x1="58.42" y1="12.7" x2="55.88" y2="12.7" width="0.1524" layer="91"/>
+<pinref part="LED_0805" gate="G$1" pin="C"/>
+<wire x1="55.88" y1="12.7" x2="17.78" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="53.34" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="17.78" x2="55.88" y2="12.7" width="0.1524" layer="91"/>
+<junction x="55.88" y="12.7"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="S1" gate="1" pin="P1"/>
-<wire x1="63.5" y1="12.7" x2="66.04" y2="12.7" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="12.7" x2="66.04" y2="20.32" width="0.1524" layer="91"/>
-<wire x1="66.04" y1="20.32" x2="71.12" y2="20.32" width="0.1524" layer="91"/>
-<pinref part="S1" gate="1" pin="P"/>
-<wire x1="71.12" y1="20.32" x2="71.12" y2="22.86" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="G$1" pin="5"/>
-<wire x1="66.04" y1="20.32" x2="38.1" y2="20.32" width="0.1524" layer="91"/>
-<junction x="66.04" y="20.32"/>
+<pinref part="1K_RESISTOR_2010" gate="G$1" pin="2"/>
+<pinref part="OMRON_SWITCH" gate="1" pin="P1"/>
+<wire x1="68.58" y1="12.7" x2="71.12" y2="12.7" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="12.7" x2="71.12" y2="22.86" width="0.1524" layer="91"/>
+<wire x1="71.12" y1="22.86" x2="73.66" y2="22.86" width="0.1524" layer="91"/>
+<pinref part="OMRON_SWITCH" gate="1" pin="P"/>
+<wire x1="73.66" y1="22.86" x2="73.66" y2="25.4" width="0.1524" layer="91"/>
+<pinref part="ATTINY85" gate="G$1" pin="6"/>
+<wire x1="38.1" y1="22.86" x2="71.12" y2="22.86" width="0.1524" layer="91"/>
+<junction x="71.12" y="22.86"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="ATTINY85" gate="G$1" pin="5"/>
+<pinref part="LED_0805" gate="G$1" pin="A"/>
+<wire x1="45.72" y1="17.78" x2="40.64" y2="17.78" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="17.78" x2="40.64" y2="20.32" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="20.32" x2="38.1" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
